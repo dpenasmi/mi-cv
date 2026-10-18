@@ -946,3 +946,16 @@ html:not(.js) .rail-arrow {
 #formacion .book-stack {
   display: none;
 }
+
+/* FORMACIÓN · Imagen de fondo más visible */
+@media (min-width: 768px) {
+  #formacion > .slide-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 21, 43, 0.35) 0%,
+      rgba(10, 21, 43, 0.45) 30%,
+      rgba(10, 21, 43, 0.75) 55%,
+      rgba(10, 21, 43, 0.90) 100%
+    );
+  }
+}
