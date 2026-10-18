@@ -219,7 +219,43 @@ const base = import.meta.env.BASE_URL;
       </div>
     </FullScreenSection>
 
-    <FullScreenSection id="contacto" image="/images/office.webp" alt="" side="left" class="panel contact photo-panel"><div class="slide-inner section-inner contact-layout"><div class="reveal"><p class="eyebrow">07 / Contacto</p><h2 id="contacto-title">Hablemos de tu<br/><span>próximo proyecto.</span></h2><p class="lead">Para oportunidades profesionales<br/>y colaboraciones.</p><div class="button-row"><a class="button" href={`mailto:${personal.email}`}>Enviar un email <Icon name="arrow"/></a><a class="button button-outline" href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>Ver LinkedIn<span class="sr-only"> (se abre en otra pestaña)</span></a></div></div><div class="contact-card reveal"><address><p><Icon name="people"/><strong>{personal.name}</strong></p><p><Icon name="pin"/>{personal.location}</p><a href={`mailto:${personal.email}`}><Icon name="mail"/>{personal.email}</a><a href={`tel:${personal.phoneHref}`}><Icon name="phone"/>{personal.phone}</a><a href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>LinkedIn · /in/dpmasesorweb/<span class="sr-only"> (nueva pestaña)</span></a></address><div class="signature"><span>David Peñas Miarnau</span><strong>DAVID PEÑAS MIARNAU</strong><small>CURRÍCULUM PROFESIONAL</small></div></div></div><footer class="page-footer"><span>© {new Date().getFullYear()} David Peñas Miarnau</span><a href="#inicio">Volver al inicio ↑</a></footer></FullScreenSection>
-  </main>
-  <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-announcement></p>
+    <FullScreenSection 
+      id="contacto" 
+      image="/images/Contacto.png" 
+      alt="" 
+      side="left" 
+      class="panel contact photo-panel">
+      
+      <div class="slide-inner section-inner contact-layout">
+        <div class="reveal">
+          <p class="eyebrow">07 / Contacto</p>
+          <h2 id="contacto-title">Hablemos de tu<br/><span>próximo proyecto.</span></h2>
+          <p class="lead">Para oportunidades profesionales<br/>y colaboraciones.</p>
+          
+            <div class="button-row">
+              <a class="button" href={`mailto:${personal.email}`}>Enviar un email <Icon name="arrow"/></a>
+              <a class="button button-outline" href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>Ver LinkedIn<span class="sr-only"> (se abre en otra pestaña)</span></a>
+            </div>
+          
+          </div>
+          
+          <div class="contact-card reveal">
+            <address>
+              <p><Icon name="people"/><strong>{personal.name}</strong></p>
+              <p><Icon name="pin"/>{personal.location}</p>
+              <a href={`mailto:${personal.email}`}><Icon name="mail"/>{personal.email}</a>
+              <a href={`tel:${personal.phoneHref}`}><Icon name="phone"/>{personal.phone}</a>
+              <a href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>LinkedIn · /in/dpmasesorweb/<span class="sr-only"> (nueva pestaña)</span></a>
+            </address>
+            
+            <div class="signature"><span>David Peñas Miarnau</span><strong>DAVID PEÑAS MIARNAU</strong><small>CURRÍCULUM PROFESIONAL</small></div>
+          </div>
+        </div>
+        
+        <footer class="page-footer"><span>© {new Date().getFullYear()} David Peñas Miarnau</span><a href="#inicio">Volver al inicio ↑</a></footer>
+      </FullScreenSection>
+  
+    </main>
+  
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-announcement></p>
 </BaseLayout>
