@@ -1,3 +1,8 @@
 import { defineConfig } from 'astro/config';
-// Configura `site` con tu dominio definitivo antes de publicar.
-export default defineConfig({ output: 'static' });
+
+export default defineConfig({
+  site: 'https://dpenasmi.github.io',
+  base: '/mi-cv',
+  trailingSlash: 'always',
+  output: 'static',
+});
