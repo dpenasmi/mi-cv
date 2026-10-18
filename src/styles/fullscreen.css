@@ -941,3 +941,8 @@ html:not(.js) .rail-arrow {
       );
   }
 }
+
+/* FORMACIÓN · Ocultar los recuadros de libros */
+#formacion .book-stack {
+  display: none;
+}
