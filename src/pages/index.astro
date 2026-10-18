@@ -82,6 +82,10 @@ const base = import.meta.env.BASE_URL;
         <div class="project-cards">
           {projects.map(project=>
             <article class:list={['project-card',project.id,'reveal']}>
+              
+              
+              
+            {/*
               <div class="project-art">
                 {project.image ? (
                   <img
@@ -93,6 +97,26 @@ const base = import.meta.env.BASE_URL;
                   <span aria-hidden="true">↗</span>
                 )}
               </div>
+            */}
+
+            <a
+              class="project-art"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visitar ${project.name} (se abre en otra pestaña)`}
+            >
+              {project.image ? (
+                <img
+                  src={`${base}${project.image.replace(/^\//, '')}`}
+                  alt={project.name}
+                  loading="lazy"
+                />
+              ) : (
+                <span aria-hidden="true">↗</span>
+              )}
+            </a>
+
               <div class="project-copy">
                 <p class="project-type">{project.type}</p>
                 <h3>{project.name}</h3>

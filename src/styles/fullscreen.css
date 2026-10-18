@@ -999,3 +999,15 @@ html:not(.js) .rail-arrow {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
   }
 }
+
+/* Imágenes de proyectos con enlace */
+a.project-art {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.project-art:focus-visible {
+  outline: 3px solid var(--cyan, #00cde5);
+  outline-offset: -3px;
+}
