@@ -110,7 +110,119 @@ const base = import.meta.env.BASE_URL;
       </div>
     </FullScreenSection>
 
-    <FullScreenSection id="formacion" image="/images/office.webp" alt="" side="left" class="panel education photo-panel"><div class="slide-inner section-inner education-layout"><div class="reveal"><p class="eyebrow">06 / Formación e idiomas</p><h2 id="formacion-title">Formación y<br/><span>actualización continua.</span></h2><p class="lead">Una base sólida y una formación especializada para seguir creciendo profesionalmente.</p><div class="book-stack" aria-hidden="true"><span>Sistemas y redes</span><span>Desarrollo web</span><span>Inteligencia artificial</span><span>Marketing digital</span></div></div><div class="education-details reveal"><div class="education-columns"><div><h3 class="column-title">Formación técnica</h3><ul class="education-list">{technicalEducation.map(([name,school])=><li><Icon name="book"/><div><h4>{name}</h4><p>{school}</p></div></li>)}</ul><div class="security-note"><Icon name="shield"/><p>Formación continuada en ciberseguridad<br/><strong>2020–2024</strong></p></div></div><div><h3 class="column-title">Especialización</h3><ul class="education-list">{digitalEducation.map(([name,school,status])=><li><Icon name="book"/><div><h4>{name}</h4><p>{school}</p>{status&&<span class:list={['status',status==='En curso'?'in-progress':'completed']}>{status==='En curso'?<span class="status-dot"/>:<Icon name="check"/>}{status}</span>}</div></li>)}</ul></div></div><ul class="languages"><li><Icon name="globe"/></li><li><strong>Castellano</strong><span>Nativo</span></li><li><strong>Catalán</strong><span>Nativo</span></li><li><strong>Inglés</strong><span>Lectura técnica de documentación</span></li></ul></div></div></FullScreenSection>
+    <FullScreenSection
+      id="formacion"
+      image="/images/formacion.png"
+      alt=""
+      side="left"
+      class="panel education photo-panel"
+      >
+      <div class="slide-inner section-inner education-layout">
+      <div class="reveal">
+        <p class="eyebrow">06 / Formación e idiomas</p>
+
+        <h2 id="formacion-title">
+          Formación y<br />
+          <span>actualización continua.</span>
+        </h2>
+
+        <p class="lead">
+          Una base sólida y una formación especializada para seguir creciendo
+          profesionalmente.
+        </p>
+
+        <div class="book-stack" aria-hidden="true">
+          <span>Sistemas y redes</span>
+          <span>Desarrollo web</span>
+          <span>Inteligencia artificial</span>
+          <span>Marketing digital</span>
+        </div>
+      </div>
+
+      <div class="education-details reveal">
+        <div class="education-columns">
+          <div>
+            <h3 class="column-title">Formación técnica</h3>
+
+            <ul class="education-list">
+              {
+                technicalEducation.map(([name, school]) => (
+                  <li>
+                    <Icon name="book" />
+                    <div>
+                      <h4>{name}</h4>
+                      <p>{school}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+
+            <div class="security-note">
+              <Icon name="shield" />
+              <p>
+                Formación continuada en ciberseguridad<br />
+                <strong>2020–2024</strong>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="column-title">Especialización</h3>
+
+            <ul class="education-list">
+              {
+                digitalEducation.map(([name, school, status]) => (
+                  <li>
+                    <Icon name="book" />
+                    <div>
+                      <h4>{name}</h4>
+                      <p>{school}</p>
+
+                      {status && (
+                        <span
+                          class:list={[
+                            'status',
+                            status === 'En curso' ? 'in-progress' : 'completed',
+                          ]}
+                        >
+                          {status === 'En curso' ? (
+                            <span class="status-dot" />
+                          ) : (
+                            <Icon name="check" />
+                          )}
+                          {status}
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <ul class="languages">
+          <li>
+            <Icon name="globe" />
+          </li>
+          <li>
+            <strong>Castellano</strong>
+            <span>Nativo</span>
+          </li>
+          <li>
+            <strong>Catalán</strong>
+            <span>Nativo</span>
+          </li>
+          <li>
+            <strong>Inglés</strong>
+            <span>Lectura técnica de documentación</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </FullScreenSection>
+
     <FullScreenSection id="contacto" image="/images/office.webp" alt="" side="left" class="panel contact photo-panel"><div class="slide-inner section-inner contact-layout"><div class="reveal"><p class="eyebrow">07 / Contacto</p><h2 id="contacto-title">Hablemos de tu<br/><span>próximo proyecto.</span></h2><p class="lead">Para oportunidades profesionales<br/>y colaboraciones.</p><div class="button-row"><a class="button" href={`mailto:${personal.email}`}>Enviar un email <Icon name="arrow"/></a><a class="button button-outline" href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>Ver LinkedIn<span class="sr-only"> (se abre en otra pestaña)</span></a></div></div><div class="contact-card reveal"><address><p><Icon name="people"/><strong>{personal.name}</strong></p><p><Icon name="pin"/>{personal.location}</p><a href={`mailto:${personal.email}`}><Icon name="mail"/>{personal.email}</a><a href={`tel:${personal.phoneHref}`}><Icon name="phone"/>{personal.phone}</a><a href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>LinkedIn · /in/dpmasesorweb/<span class="sr-only"> (nueva pestaña)</span></a></address><div class="signature"><span>David Peñas Miarnau</span><strong>DAVID PEÑAS MIARNAU</strong><small>CURRÍCULUM PROFESIONAL</small></div></div></div><footer class="page-footer"><span>© {new Date().getFullYear()} David Peñas Miarnau</span><a href="#inicio">Volver al inicio ↑</a></footer></FullScreenSection>
   </main>
   <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-announcement></p>
