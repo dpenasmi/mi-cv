@@ -1,0 +1,19 @@
+---
+import '../styles/global.css';
+import '../styles/fullscreen.css';
+import { personal } from '../data/cv.js';
+const description='Currículum profesional de David Peñas Miarnau. Experiencia en sistemas TI, ciberseguridad, desarrollo web, automatización e inteligencia artificial.';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <title>David Peñas Miarnau | Profesional TI y soluciones digitales</title>
+    <meta name="description" content={description}/><meta name="theme-color" content="#14213d"/>
+    <meta property="og:title" content="David Peñas Miarnau · Currículum profesional"/><meta property="og:description" content={description}/><meta property="og:type" content="profile"/><meta property="og:locale" content="es_ES"/>
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`}/>
+    <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Person',name:personal.name,jobTitle:'Profesional TI y soluciones digitales',sameAs:[personal.linkedin],knowsAbout:['Administración de sistemas','Ciberseguridad','Desarrollo web','Automatización','Inteligencia artificial'],homeLocation:{'@type':'Place',name:'Barcelona'}})}/>
+  </head>
+  <body><slot/><script>import '../scripts/navigation.js';</script></body>
+</html>

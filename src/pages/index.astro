@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Header from '../components/Header.astro';
+import SlideNavigation from '../components/SlideNavigation.astro';
+import FullScreenSection from '../components/FullScreenSection.astro';
+import { personal, sections, competencies, projects, technicalEducation, digitalEducation } from '../data/cv.js';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <Header />
+  <SlideNavigation />
+  <main id="contenido">
+    <FullScreenSection 
+      id="inicio" 
+      image="/images/david.webp" 
+      alt="" 
+      side="left" 
+      class="panel hero" priority>
+
+      <div class="slide-inner section-inner hero-content">
+        <p class="eyebrow">01 / Presentación</p>
+        <p class="hero-name">David Peñas Miarnau</p><p class="role">Profesional TI y soluciones digitales</p>
+        <h1 id="inicio-title">Experiencia técnica.<br/>Capacidad de adaptación.<br/><span>Aprendizaje continuo.</span></h1>
+        <p class="specialties">Administración de sistemas · Ciberseguridad · Desarrollo web · Automatización e IA aplicada a negocios</p>
+        <p class="hero-summary">Trayectoria en entornos corporativos y proyectos digitales, con criterio técnico y orientación a la resolución de problemas.</p>
+        <div class="button-row"><a class="button" href="#experiencia">Ver experiencia <Icon name="arrow"/></a><a class="button button-outline" href="#contacto">Contactar</a></div>
+        <ul class="metrics" aria-label="Experiencia en cifras"><li><Icon name="gear"/><div><strong>+30 años</strong><span>ofreciendo soluciones</span></div></li><li><Icon name="laptop"/><div><strong>+25 años</strong><span>en TI</span></div></li><li><Icon name="bulb"/><div><strong>+4 años</strong><span>aplicando IA</span></div></li></ul>
+      </div><a href="#perfil" class="scroll-cue" aria-label="Descubrir mi perfil"><span class="mouse"></span><small>Desliza para descubrir</small><Icon name="chevron"/></a>
+    </FullScreenSection>
+    
+    <FullScreenSection 
+      id="perfil" 
+      image="/images/office.png" 
+      alt="" 
+      side="right" 
+      class="panel profile photo-panel">
+
+      <div class="slide-inner section-inner split-right"><div class="section-copy reveal"><p class="eyebrow">02 / Perfil profesional</p><h2 id="perfil-title">Tecnología, personas<br/>y <span>capacidad para resolver.</span></h2><p class="lead">Experiencia en sistemas, soporte, infraestructuras TI y ciberseguridad. Actualmente aplico esa base al desarrollo web, la automatización y la inteligencia artificial.</p><div class="strengths"><div><Icon name="bulb"/><h3>Resolución<br/>de problemas</h3></div><div><Icon name="people"/><h3>Organización<br/>y autonomía</h3></div><div><Icon name="network"/><h3>Adaptación<br/>y trato cercano</h3></div></div><p class="callout"><Icon name="people"/><span>Experiencia comercial y atención al cliente como base para entender necesidades.</span></p></div></div>
+    
+    </FullScreenSection>
+    
+    <FullScreenSection 
+      id="experiencia" 
+      image="/images/city.webp" 
+      alt="" 
+      side="left" 
+      class="panel experience">
+      
+      <div class="slide-inner section-inner reveal"><p class="eyebrow">03 / Experiencia profesional</p><h2 id="experiencia-title">Mi experiencia <span>profesional.</span></h2><p class="lead section-intro">Una trayectoria diversa que me ha permitido adquirir una base sólida en sistemas y evolucionar hacia proyectos digitales.</p><ol class="timeline"><li><p class="date">1992–1999</p><h3>Comercio y atención<br/>al cliente</h3><p>Gestión comercial, ventas técnicas y atención al público.</p></li><li><p class="date">1999–2024</p><h3>Administrador IT / Sistemas</h3><p class="employers">General Óptica · T-Systems · Generalitat de Catalunya · Serdimat Direct</p><p>Windows y Linux. Redes y virtualización. Administración SAP. Soporte y resolución de incidencias.</p><div class="security-note"><Icon name="shield"/><div><strong>2020–2024 · Ciberseguridad</strong><p>Experiencia profesional y formación continuada en el sector.</p></div></div></li><li><p class="date">2024–Actualidad</p><h3>DPM Evolución Digital</h3><p class="job-subtitle">Consultoría Marketing Digital y soluciones digitales</p><p>Desarrollo y mantenimiento web. SEO y presencia digital en los nuevos entornos IA. Automatización con n8n e IA. Gestión de hosting, dominios y SSL.</p></li></ol></div>
+    
+    </FullScreenSection>
+    
+    <FullScreenSection 
+      
+      id="competencias" 
+      image="/images/Competencias.png" 
+      alt="" 
+      side="left" 
+      class="panel skills photo-panel">
+      
+      <div class="slide-inner section-inner reveal"><p class="eyebrow">04 / Competencias</p><h2 id="competencias-title">Conocimientos que conectan<br/>infraestructura y <span>proyectos digitales.</span></h2><div class="skills-grid">{competencies.map(item=><article class="skill"><Icon name={item.icon}/><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div><p class="callout ongoing"><Icon name="globe"/><span>En actualización continua: Astro y nuevas herramientas de IA.</span></p></div>
+    
+    </FullScreenSection>
+    
+    <FullScreenSection 
+    
+      id="proyectos" 
+      image="/images/Proyectos.png" 
+      alt="" side="left" 
+      class="panel projects photo-panel">
+      
+      <div class="slide-inner section-inner project-layout">
+        
+        <div class="reveal">
+          <p class="eyebrow">05 / Proyectos destacados</p>
+          <h2 id="proyectos-title">Aplicación práctica<br/>de mis <span>conocimientos.</span></h2>
+          <p class="lead">Una selección de proyectos desarrollados en mi etapa actual.</p>
+        </div>
+        
+        <div class="project-cards">
+          {projects.map(project=>
+            <article class:list={['project-card',project.id,'reveal']}>
+              <div class="project-art">
+                {project.image ? (
+                  <img
+                    src={`${base}${project.image.replace(/^\//, '')}`}
+                    alt={project.name}
+                    loading="lazy"
+                  />
+                ) : (
+                  <span aria-hidden="true">↗</span>
+                )}
+              </div>
+              <div class="project-copy">
+                <p class="project-type">{project.type}</p>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+                <details>
+                  <summary>Sobre el proyecto <span aria-hidden="true">+</span></summary>
+                  <p>{project.detail}</p>
+                </details>
+              </div>
+            </article>
+          )
+          }
+        </div>
+      
+      </div>
+    </FullScreenSection>
+
+    <FullScreenSection id="formacion" image="/images/office.webp" alt="" side="left" class="panel education photo-panel"><div class="slide-inner section-inner education-layout"><div class="reveal"><p class="eyebrow">06 / Formación e idiomas</p><h2 id="formacion-title">Formación y<br/><span>actualización continua.</span></h2><p class="lead">Una base sólida y una formación especializada para seguir creciendo profesionalmente.</p><div class="book-stack" aria-hidden="true"><span>Sistemas y redes</span><span>Desarrollo web</span><span>Inteligencia artificial</span><span>Marketing digital</span></div></div><div class="education-details reveal"><div class="education-columns"><div><h3 class="column-title">Formación técnica</h3><ul class="education-list">{technicalEducation.map(([name,school])=><li><Icon name="book"/><div><h4>{name}</h4><p>{school}</p></div></li>)}</ul><div class="security-note"><Icon name="shield"/><p>Formación continuada en ciberseguridad<br/><strong>2020–2024</strong></p></div></div><div><h3 class="column-title">Especialización</h3><ul class="education-list">{digitalEducation.map(([name,school,status])=><li><Icon name="book"/><div><h4>{name}</h4><p>{school}</p>{status&&<span class:list={['status',status==='En curso'?'in-progress':'completed']}>{status==='En curso'?<span class="status-dot"/>:<Icon name="check"/>}{status}</span>}</div></li>)}</ul></div></div><ul class="languages"><li><Icon name="globe"/></li><li><strong>Castellano</strong><span>Nativo</span></li><li><strong>Catalán</strong><span>Nativo</span></li><li><strong>Inglés</strong><span>Lectura técnica de documentación</span></li></ul></div></div></FullScreenSection>
+    <FullScreenSection id="contacto" image="/images/office.webp" alt="" side="left" class="panel contact photo-panel"><div class="slide-inner section-inner contact-layout"><div class="reveal"><p class="eyebrow">07 / Contacto</p><h2 id="contacto-title">Hablemos de tu<br/><span>próximo proyecto.</span></h2><p class="lead">Para oportunidades profesionales<br/>y colaboraciones.</p><div class="button-row"><a class="button" href={`mailto:${personal.email}`}>Enviar un email <Icon name="arrow"/></a><a class="button button-outline" href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>Ver LinkedIn<span class="sr-only"> (se abre en otra pestaña)</span></a></div></div><div class="contact-card reveal"><address><p><Icon name="people"/><strong>{personal.name}</strong></p><p><Icon name="pin"/>{personal.location}</p><a href={`mailto:${personal.email}`}><Icon name="mail"/>{personal.email}</a><a href={`tel:${personal.phoneHref}`}><Icon name="phone"/>{personal.phone}</a><a href={personal.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin"/>LinkedIn · /in/dpmasesorweb/<span class="sr-only"> (nueva pestaña)</span></a></address><div class="signature"><span>David Peñas Miarnau</span><strong>DAVID PEÑAS MIARNAU</strong><small>CURRÍCULUM PROFESIONAL</small></div></div></div><footer class="page-footer"><span>© {new Date().getFullYear()} David Peñas Miarnau</span><a href="#inicio">Volver al inicio ↑</a></footer></FullScreenSection>
+  </main>
+  <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-announcement></p>
+</BaseLayout>

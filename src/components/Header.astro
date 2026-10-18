@@ -1,0 +1,15 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { sections } from '../data/cv.js';
+---
+<header class="site-header" id="cabecera">
+  <a href="#inicio" aria-label="David Peñas Miarnau, inicio"><Brand/></a>
+  <nav class="main-nav desktop-nav" aria-label="Navegación principal">{sections.slice(1).map(([id,label])=><a href={`#${id}`} data-section-link={id}>{label}</a>)}</nav>
+  <div class="header-actions"><a class="button button-small header-contact" href="#contacto">Contactar <Icon name="arrow"/></a>
+  <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" type="button"><span class="menu-label">Menú</span><span class="menu-bars" aria-hidden="true"></span></button></div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Navegación móvil" hidden>
+  {sections.map(([id,label],i)=><a href={`#${id}`} data-section-link={id}><span>{String(i+1).padStart(2,'0')}</span>{label}</a>)}
+  <a class="button" href="#contacto">Contactar <Icon name="arrow"/></a>
+</nav>
