@@ -29,7 +29,7 @@ const base = import.meta.env.BASE_URL;
         <ul class="metrics" aria-label="Experiencia en cifras"><li><Icon name="gear"/><div><strong>+30 años</strong><span>ofreciendo soluciones</span></div></li><li><Icon name="laptop"/><div><strong>+25 años</strong><span>en TI</span></div></li><li><Icon name="bulb"/><div><strong>+4 años</strong><span>aplicando IA</span></div></li></ul>
       </div><a href="#perfil" class="scroll-cue" aria-label="Descubrir mi perfil"><span class="mouse"></span><small>Desliza para descubrir</small><Icon name="chevron"/></a>
     </FullScreenSection>
-    
+
     <FullScreenSection 
       id="perfil" 
       image="/images/office.png" 
@@ -38,47 +38,47 @@ const base = import.meta.env.BASE_URL;
       class="panel profile photo-panel">
 
       <div class="slide-inner section-inner split-right"><div class="section-copy reveal"><p class="eyebrow">02 / Perfil profesional</p><h2 id="perfil-title">Tecnología, personas<br/>y <span>capacidad para resolver.</span></h2><p class="lead">Experiencia en sistemas, soporte, infraestructuras TI y ciberseguridad. Actualmente aplico esa base al desarrollo web, la automatización y la inteligencia artificial.</p><div class="strengths"><div><Icon name="bulb"/><h3>Resolución<br/>de problemas</h3></div><div><Icon name="people"/><h3>Organización<br/>y autonomía</h3></div><div><Icon name="network"/><h3>Adaptación<br/>y trato cercano</h3></div></div><p class="callout"><Icon name="people"/><span>Experiencia comercial y atención al cliente como base para entender necesidades.</span></p></div></div>
-    
+
     </FullScreenSection>
-    
+
     <FullScreenSection 
       id="experiencia" 
       image="/images/city.webp" 
       alt="" 
       side="left" 
       class="panel experience">
-      
+
       <div class="slide-inner section-inner reveal"><p class="eyebrow">03 / Experiencia profesional</p><h2 id="experiencia-title">Mi experiencia <span>profesional.</span></h2><p class="lead section-intro">Una trayectoria diversa que me ha permitido adquirir una base sólida en sistemas y evolucionar hacia proyectos digitales.</p><ol class="timeline"><li><p class="date">1992–1999</p><h3>Comercio y atención<br/>al cliente</h3><p>Gestión comercial, ventas técnicas y atención al público.</p></li><li><p class="date">1999–2024</p><h3>Administrador IT / Sistemas</h3><p class="employers">General Óptica · T-Systems · Generalitat de Catalunya · Serdimat Direct</p><p>Windows y Linux. Redes y virtualización. Administración SAP. Soporte y resolución de incidencias.</p><div class="security-note"><Icon name="shield"/><div><strong>2020–2024 · Ciberseguridad</strong><p>Experiencia profesional y formación continuada en el sector.</p></div></div></li><li><p class="date">2024–Actualidad</p><h3>DPM Evolución Digital</h3><p class="job-subtitle">Consultoría Marketing Digital y soluciones digitales</p><p>Desarrollo y mantenimiento web. SEO y presencia digital en los nuevos entornos IA. Automatización con n8n e IA. Gestión de hosting, dominios y SSL.</p></li></ol></div>
-    
+
     </FullScreenSection>
-    
+
     <FullScreenSection 
-      
+
       id="competencias" 
       image="/images/Competencias.png" 
       alt="" 
       side="left" 
       class="panel skills photo-panel">
-      
+
       <div class="slide-inner section-inner reveal"><p class="eyebrow">04 / Competencias</p><h2 id="competencias-title">Conocimientos que conectan<br/>infraestructura y <span>proyectos digitales.</span></h2><div class="skills-grid">{competencies.map(item=><article class="skill"><Icon name={item.icon}/><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div><p class="callout ongoing"><Icon name="globe"/><span>En actualización continua: Astro y nuevas herramientas de IA.</span></p></div>
-    
+
     </FullScreenSection>
-    
+
     <FullScreenSection 
-    
+
       id="proyectos" 
       image="/images/Proyectos.png" 
       alt="" side="left" 
       class="panel projects photo-panel">
-      
+
       <div class="slide-inner section-inner project-layout">
-        
+
         <div class="reveal">
           <p class="eyebrow">05 / Proyectos destacados</p>
           <h2 id="proyectos-title">Aplicación práctica<br/>de mis <span>conocimientos.</span></h2>
           <p class="lead">Una selección de proyectos desarrollados en mi etapa actual.</p>
         </div>
-        
+
         <div class="project-cards">
           {projects.map(project=>
             <article class:list={['project-card',project.id,'reveal']}>
@@ -106,7 +106,7 @@ const base = import.meta.env.BASE_URL;
           )
           }
         </div>
-      
+
       </div>
     </FullScreenSection>
 
@@ -131,7 +131,9 @@ const base = import.meta.env.BASE_URL;
           profesionalmente.
         </p>
 
-        
+
+
+      </div>
 
       <div class="education-details reveal">
         <div class="education-columns">
